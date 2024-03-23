@@ -55,13 +55,18 @@ SBOX = [
     0x6, 0x4, 0xC, 0x5, 0x0, 0x7, 0x2, 0xE,
     0x1, 0xF, 0x3, 0xD, 0x8, 0xA, 0x9, 0xB
 ]
-
+def write_ciphertext_to_file(ciphertext, filename):
+    with open(filename, 'w') as file:
+        file.write(' '.join(format(byte, '02x') for byte in ciphertext))
 # Example usage:
 key = [0x00] * 16  # 128-bit key
 iv = [0x00] * 8  # 64-bit IV
 plaintext = b"Hello, Rabbit!"
-ciphertext = rabbit_encrypt(plaintext, key, iv)
-decrypted_text = rabbit_decrypt(ciphertext, key, iv)
 print("Original:", plaintext)
-print("Encrypted:", ciphertext)
+ciphertext = rabbit_encrypt(plaintext, key, iv)
+print("Encrypted:", " ".join(format(byte, '02x') for byte in ciphertext))
+decrypted_text = rabbit_decrypt(ciphertext, key, iv)
+for byte in ciphertext:
+    print(hex(byte), end=" ")
+print("Decrypted_bytes:", " ".join(format(byte, '02x') for byte in decrypted_text))
 print("Decrypted:", decrypted_text.decode())
