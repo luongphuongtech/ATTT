@@ -8,8 +8,7 @@
 - Chuỗi ký tự dạng bytes được mã hóa
 - Chuỗi ký tự dạng bytes được giải mã
 - Chuỗi ký tự được giải mã
-
-![Hình ảnh](https://github.com/luongphuongtech/ATTT/assets/121532605/481c90e6-633d-4246-9cc5-baada73f1084)
+![image](https://github.com/luongphuongtech/ATTT/assets/121532605/6fdf41ea-323c-4803-b38f-8b77bcb09608)
 
 ### Testcase 2:
 
